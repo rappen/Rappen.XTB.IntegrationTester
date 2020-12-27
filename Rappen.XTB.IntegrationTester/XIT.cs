@@ -4,12 +4,25 @@ using System.Data;
 using System.Linq;
 using XrmToolBox;
 using XrmToolBox.Extensibility;
+using XrmToolBox.Extensibility.Interfaces;
 
 namespace Rappen.XTB.IntegrationTester
 {
-    public partial class XIT : PluginControlBase, IMessageBusHost
+    public partial class XIT : PluginControlBase, IMessageBusHost, IGitHubPlugin, IHelpPlugin, IPayPalPlugin
     {
         private Settings mySettings;
+
+        public string RepositoryName => "Rappen.XTB.IntegrationTester";
+
+        public string UserName => "rappen";
+
+        public string HelpUrl => "https://github.com/rappen/Rappen.XTB.IntegrationTester";
+
+        public string DonationDescription => "XIT fan club";
+
+        public string EmailAccount => "jonas@rappen.net";
+
+        public event EventHandler<MessageBusEventArgs> OnOutgoingMessage;
 
         public XIT()
         {
@@ -18,7 +31,9 @@ namespace Rappen.XTB.IntegrationTester
 
         private void MyPluginControl_Load(object sender, EventArgs e)
         {
-            var tools = PluginManagerExtended.Instance.ValidatedPlugins.Select(t => new ToolProxy(t)).ToList();
+            var tools = PluginManagerExtended.Instance.ValidatedPlugins
+                //.Where(t => t.Value.GetControl() is IMessageBusHost)
+                .Select(t => new ToolProxy(t)).ToList();
 
             if (!SettingsManager.Instance.TryLoad(GetType(), out mySettings))
             {
@@ -45,7 +60,8 @@ namespace Rappen.XTB.IntegrationTester
             {
                 txtIdentifier.Text = tool.Tool.ToString();
                 txtVersion.Text = tool.Tool.Value.GetVersion();
-                txtArguments.Text = tool.Argument;
+                txtArguments.Enabled = tool.Tool.Value.GetControl() is IMessageBusHost;
+                txtArguments.Text = txtArguments.Enabled ? tool.Argument : string.Empty;
             }
         }
 
@@ -54,8 +70,20 @@ namespace Rappen.XTB.IntegrationTester
             if (cmbTool.SelectedItem is ToolProxy tool)
             {
                 tool.Argument = txtArguments.Text;
-
+                try
+                {
+                    OnOutgoingMessage(this, new MessageBusEventArgs(tool.Name, chkNewInstance.Checked) { TargetArgument = tool.Argument });
+                }
+                catch (Exception ex)
+                {
+                    txtInfo.Text = ex.ToString();
+                }
             }
+        }
+
+        public void OnIncomingMessage(MessageBusEventArgs message)
+        {
+            txtInfo.Text = $"Source Tool: {message.SourcePlugin}\n\rArgument: {message.TargetArgument}";
         }
     }
 }

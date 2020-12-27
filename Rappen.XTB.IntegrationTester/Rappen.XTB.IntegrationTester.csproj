@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Rappen.XTB.IntegrationTester</RootNamespace>
-    <AssemblyName>Rappen.XTB.IntegrationTester</AssemblyName>
+    <AssemblyName>Rappen.XTB.XIT</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

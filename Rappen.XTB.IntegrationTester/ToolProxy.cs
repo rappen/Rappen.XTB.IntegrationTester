@@ -13,7 +13,9 @@ namespace Rappen.XTB.IntegrationTester
             Identifier = tool.ToString();
         }
 
-        public override string ToString() => Tool.Metadata.Name;
+        public string Name => Tool.Metadata.Name;
+
+        public override string ToString() => Name;
 
         public string Identifier { get; set; }
         public string Argument { get; set; }

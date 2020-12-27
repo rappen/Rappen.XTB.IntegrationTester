@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XIT));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtArguments = new System.Windows.Forms.TextBox();
@@ -37,12 +38,22 @@
             this.cmbTool = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtVersion = new System.Windows.Forms.TextBox();
+            this.chkNewInstance = new System.Windows.Forms.CheckBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txtInfo = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 31);
+            this.label1.Location = new System.Drawing.Point(11, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 6;
@@ -51,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 110);
+            this.label2.Location = new System.Drawing.Point(11, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 7;
@@ -59,16 +70,20 @@
             // 
             // txtArguments
             // 
+            this.txtArguments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArguments.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArguments.Location = new System.Drawing.Point(94, 107);
+            this.txtArguments.Location = new System.Drawing.Point(83, 117);
             this.txtArguments.Multiline = true;
             this.txtArguments.Name = "txtArguments";
-            this.txtArguments.Size = new System.Drawing.Size(425, 119);
+            this.txtArguments.Size = new System.Drawing.Size(600, 577);
             this.txtArguments.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(94, 232);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(83, 700);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -78,16 +93,18 @@
             // 
             // txtIdentifier
             // 
-            this.txtIdentifier.Location = new System.Drawing.Point(94, 55);
+            this.txtIdentifier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIdentifier.Location = new System.Drawing.Point(83, 40);
             this.txtIdentifier.Name = "txtIdentifier";
             this.txtIdentifier.ReadOnly = true;
-            this.txtIdentifier.Size = new System.Drawing.Size(425, 20);
+            this.txtIdentifier.Size = new System.Drawing.Size(600, 20);
             this.txtIdentifier.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 58);
+            this.label3.Location = new System.Drawing.Point(11, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 11;
@@ -95,18 +112,20 @@
             // 
             // cmbTool
             // 
+            this.cmbTool.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTool.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTool.FormattingEnabled = true;
-            this.cmbTool.Location = new System.Drawing.Point(94, 28);
+            this.cmbTool.Location = new System.Drawing.Point(83, 13);
             this.cmbTool.Name = "cmbTool";
-            this.cmbTool.Size = new System.Drawing.Size(425, 21);
+            this.cmbTool.Size = new System.Drawing.Size(600, 21);
             this.cmbTool.TabIndex = 12;
             this.cmbTool.SelectedIndexChanged += new System.EventHandler(this.cmbTool_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 84);
+            this.label4.Location = new System.Drawing.Point(11, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 14;
@@ -114,30 +133,99 @@
             // 
             // txtVersion
             // 
-            this.txtVersion.Location = new System.Drawing.Point(94, 81);
+            this.txtVersion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtVersion.Location = new System.Drawing.Point(83, 66);
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.ReadOnly = true;
-            this.txtVersion.Size = new System.Drawing.Size(425, 20);
+            this.txtVersion.Size = new System.Drawing.Size(600, 20);
             this.txtVersion.TabIndex = 13;
             // 
-            // MyPluginControl
+            // chkNewInstance
+            // 
+            this.chkNewInstance.AutoSize = true;
+            this.chkNewInstance.Location = new System.Drawing.Point(83, 94);
+            this.chkNewInstance.Name = "chkNewInstance";
+            this.chkNewInstance.Size = new System.Drawing.Size(119, 17);
+            this.chkNewInstance.TabIndex = 15;
+            this.chkNewInstance.Text = "Force new instance";
+            this.chkNewInstance.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.cmbTool);
+            this.splitContainer1.Panel1.Controls.Add(this.chkNewInstance);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.txtVersion);
+            this.splitContainer1.Panel1.Controls.Add(this.txtArguments);
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            this.splitContainer1.Panel1.Controls.Add(this.txtIdentifier);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.txtInfo);
+            this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Size = new System.Drawing.Size(1102, 737);
+            this.splitContainer1.SplitterDistance = 694;
+            this.splitContainer1.SplitterWidth = 8;
+            this.splitContainer1.TabIndex = 16;
+            // 
+            // txtInfo
+            // 
+            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfo.Location = new System.Drawing.Point(0, 40);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.ReadOnly = true;
+            this.txtInfo.Size = new System.Drawing.Size(400, 697);
+            this.txtInfo.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 40);
+            this.panel1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Info";
+            // 
+            // XIT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtVersion);
-            this.Controls.Add(this.cmbTool);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtIdentifier);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtArguments);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "MyPluginControl";
-            this.Size = new System.Drawing.Size(559, 300);
+            this.Controls.Add(this.splitContainer1);
+            this.Name = "XIT";
+            this.PluginIcon = ((System.Drawing.Icon)(resources.GetObject("$this.PluginIcon")));
+            this.Size = new System.Drawing.Size(1102, 737);
+            this.TabIcon = ((System.Drawing.Image)(resources.GetObject("$this.TabIcon")));
             this.Load += new System.EventHandler(this.MyPluginControl_Load);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -151,5 +239,10 @@
         private System.Windows.Forms.ComboBox cmbTool;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtVersion;
+        private System.Windows.Forms.CheckBox chkNewInstance;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TextBox txtInfo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
     }
 }

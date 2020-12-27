@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Rappen.XrmToolBox.IntegrationTester/id>
+    <version>1.0.0</version>
+    <title>XrmToolBox Integration Tester for XrmToolBox</title>
+    <authors>Jonas Rapp</authors>
+    <owners>rappen</owners>
+    <projectUrl>https://github.com/rappen/Rappen.XTB.IntegrationTester</projectUrl>
+    <iconUrl>https://jonasr.app/wp-content/uploads/XIT-150.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>XrmToolBox tool to test integration scenarios with any XrmToolBox tool.</summary>
+    <description>XrmToolBox tool to test integration scenarios with any XrmToolBox tool.</description>
+    <releaseNotes>
+      Full release notes:
+      https://github.com/rappen/Rappen.XTB.IntegrationTester/releases/tag/$buildnumber$
+    </releaseNotes>
+    <copyright>Copyright Jonas Rapp 2020</copyright>
+    <tags>XrmToolBox Tools Integration Tester</tags>
+    <dependencies>
+      <dependency id="XrmToolBox" version="1.2020.12.43" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="\Rappen.XTB.IntegrationTester\bin\Release\Rappen.XTB.XIT.dll" target="lib\net452\Plugins" />
+  </files>
+</package>
