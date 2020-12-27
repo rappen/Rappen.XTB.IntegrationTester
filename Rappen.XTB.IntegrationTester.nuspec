@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Rappen.XrmToolBox.IntegrationTester/id>
+    <id>Rappen.XrmToolBox.IntegrationTester</id>
     <version>1.0.0</version>
     <title>XrmToolBox Integration Tester for XrmToolBox</title>
     <authors>Jonas Rapp</authors>
