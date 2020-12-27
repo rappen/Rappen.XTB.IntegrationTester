@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using XrmToolBox;
 using XrmToolBox.Extensibility;
 using XrmToolBox.Extensibility.Interfaces;
@@ -11,6 +12,9 @@ namespace Rappen.XTB.IntegrationTester
     public partial class XIT : PluginControlBase, IMessageBusHost, IGitHubPlugin, IHelpPlugin, IPayPalPlugin
     {
         private Settings mySettings;
+        private const string aiEndpoint = "https://dc.services.visualstudio.com/v2/track";
+        private const string aiKey = "eed73022-2444-45fd-928b-5eebd8fa46a6";    // jonas@rappen.net tenant, XrmToolBox
+        private AppInsights ai;
 
         public string RepositoryName => "Rappen.XTB.IntegrationTester";
 
@@ -27,10 +31,12 @@ namespace Rappen.XTB.IntegrationTester
         public XIT()
         {
             InitializeComponent();
+            ai = new AppInsights(aiEndpoint, aiKey, Assembly.GetExecutingAssembly(), "XrmToolBox Integration Tester");
         }
 
         private void MyPluginControl_Load(object sender, EventArgs e)
         {
+            ai.WriteEvent("Load");
             var tools = PluginManagerExtended.Instance.ValidatedPlugins
                 .Select(t => new ToolProxy(t))
                 .OrderBy(t => t.Name)
