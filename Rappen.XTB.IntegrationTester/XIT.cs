@@ -32,8 +32,9 @@ namespace Rappen.XTB.IntegrationTester
         private void MyPluginControl_Load(object sender, EventArgs e)
         {
             var tools = PluginManagerExtended.Instance.ValidatedPlugins
-                //.Where(t => t.Value.GetControl() is IMessageBusHost)
-                .Select(t => new ToolProxy(t)).ToList();
+                .Select(t => new ToolProxy(t))
+                .OrderBy(t => t.Name)
+                .ToList();
 
             if (!SettingsManager.Instance.TryLoad(GetType(), out mySettings))
             {
@@ -83,7 +84,7 @@ namespace Rappen.XTB.IntegrationTester
 
         public void OnIncomingMessage(MessageBusEventArgs message)
         {
-            txtInfo.Text = $"Source Tool: {message.SourcePlugin}\n\rArgument: {message.TargetArgument}";
+            txtInfo.Text = $"Source Tool: {message.SourcePlugin}\r\nArgument: {message.TargetArgument}";
         }
     }
 }
