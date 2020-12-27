@@ -22,6 +22,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="\Rappen.XTB.IntegrationTester\bin\Release\Rappen.XTB.XIT.dll" target="lib\net452\Plugins" />
+    <file src="Rappen.XTB.IntegrationTester\bin\Release\Rappen.XTB.XIT.dll" target="lib\net452\Plugins" />
   </files>
 </package>
