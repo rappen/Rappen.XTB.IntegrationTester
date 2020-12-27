@@ -34,7 +34,7 @@ namespace Rappen.XTB.IntegrationTester
             ai = new AppInsights(aiEndpoint, aiKey, Assembly.GetExecutingAssembly(), "XrmToolBox Integration Tester");
         }
 
-        private void MyPluginControl_Load(object sender, EventArgs e)
+        private void XIT_Load(object sender, EventArgs e)
         {
             ai.WriteEvent("Load");
             var tools = PluginManagerExtended.Instance.ValidatedPlugins
@@ -72,7 +72,7 @@ namespace Rappen.XTB.IntegrationTester
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCallIt_Click(object sender, EventArgs e)
         {
             if (cmbTool.SelectedItem is ToolProxy tool)
             {

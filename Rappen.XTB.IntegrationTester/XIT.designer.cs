@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtArguments = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCallIt = new System.Windows.Forms.Button();
             this.txtIdentifier = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbTool = new System.Windows.Forms.ComboBox();
@@ -80,16 +80,16 @@
             this.txtArguments.Size = new System.Drawing.Size(600, 577);
             this.txtArguments.TabIndex = 8;
             // 
-            // button1
+            // btnCallIt
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(83, 700);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Call it!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCallIt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCallIt.Location = new System.Drawing.Point(83, 700);
+            this.btnCallIt.Name = "btnCallIt";
+            this.btnCallIt.Size = new System.Drawing.Size(75, 23);
+            this.btnCallIt.TabIndex = 9;
+            this.btnCallIt.Text = "Call it!";
+            this.btnCallIt.UseVisualStyleBackColor = true;
+            this.btnCallIt.Click += new System.EventHandler(this.btnCallIt_Click);
             // 
             // txtIdentifier
             // 
@@ -166,7 +166,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.txtVersion);
             this.splitContainer1.Panel1.Controls.Add(this.txtArguments);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCallIt);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.txtIdentifier);
             // 
@@ -216,7 +216,7 @@
             this.PluginIcon = ((System.Drawing.Icon)(resources.GetObject("$this.PluginIcon")));
             this.Size = new System.Drawing.Size(1102, 737);
             this.TabIcon = ((System.Drawing.Image)(resources.GetObject("$this.TabIcon")));
-            this.Load += new System.EventHandler(this.MyPluginControl_Load);
+            this.Load += new System.EventHandler(this.XIT_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -233,7 +233,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtArguments;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCallIt;
         private System.Windows.Forms.TextBox txtIdentifier;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbTool;
